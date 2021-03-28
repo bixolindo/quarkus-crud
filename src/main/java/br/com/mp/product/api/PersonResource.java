@@ -32,6 +32,12 @@ public class PersonResource {
         return personRepository.listAll();
     }
 
+    @GET
+    @Path("{id}")
+    public Response getByID(@PathParam("id") Long id){
+        return Response.ok(personRepository.findById(id)).status(Response.Status.OK).build();
+    }
+
     @POST
     public Response create(@Valid Person person) {
         Person personEntity = personRepository.save(person);
