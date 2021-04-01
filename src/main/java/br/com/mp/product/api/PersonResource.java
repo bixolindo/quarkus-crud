@@ -1,6 +1,7 @@
 package br.com.mp.product.api;
 
 import br.com.mp.product.model.Person;
+import br.com.mp.product.model.PersonDTO;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -23,38 +24,38 @@ import br.com.mp.product.repository.PersonRepository;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class PersonResource {
-    
+
     @Inject
     private PersonRepository personRepository;
 
     @GET
-    public List<Person> list() {
-        return personRepository.listAll();
+    public List<PersonDTO> list() {
+        return personRepository.list();
     }
 
     @GET
     @Path("{id}")
-    public Response getByID(@PathParam("id") Long id){
+    public Response getByID(@PathParam("id") Long id) {
         return Response.ok(personRepository.findById(id)).status(Response.Status.OK).build();
     }
 
     @POST
-    public Response create(@Valid Person person) {
-        Person personEntity = personRepository.save(person);
+    public Response create(@Valid PersonDTO person) {
+        PersonDTO personEntity = personRepository.save(person);
         return Response.ok(personEntity).status(Response.Status.CREATED).build();
     }
 
     @PUT
     @Path("{id}")
-    public Response update(@PathParam("id") Long id, Person person){
-        Person personUpdated = personRepository.update(id, person);
+    public Response update(@PathParam("id") Long id, PersonDTO person) {
+        PersonDTO personUpdated = personRepository.update(id, person);
 
         return Response.ok(personUpdated).build();
     }
 
     @DELETE
     @Path("{id}")
-    public Response remove(@PathParam("id") Long id){
+    public Response remove(@PathParam("id") Long id) {
         personRepository.remove(id);
         return Response.status(Response.Status.NO_CONTENT).build();
     }
