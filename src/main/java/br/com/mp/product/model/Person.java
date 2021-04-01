@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-
 @Entity
 public class Person extends PanacheEntity {
 
@@ -20,5 +19,7 @@ public class Person extends PanacheEntity {
 
     @NotBlank(message = "adress may not be blank")
     public String address;
+
+    public byte[] base64;
 
 }

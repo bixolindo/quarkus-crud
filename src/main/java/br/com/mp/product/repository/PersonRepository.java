@@ -1,34 +1,47 @@
 package br.com.mp.product.repository;
 
 import br.com.mp.product.model.Person;
+import br.com.mp.product.model.PersonDTO;
+import br.com.mp.product.repository.converter.PersonConverter;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import java.util.List;
 
 @ApplicationScoped
-public class PersonRepository implements PanacheRepository<Person>{
-    public List<Person> list() {
-        return listAll();
+public class PersonRepository implements PanacheRepository<Person> {
+
+    @Inject
+    private PersonConverter personConverter;
+
+    public List<PersonDTO> list() {
+        return personConverter.ormListToDtoList(listAll());
     }
 
     @Transactional
-    public Person save(Person person){
-        persist(person);
+    public PersonDTO save(PersonDTO person) {
+        Person newPerson = personConverter.dtoToOrm(person);
+        persist(newPerson);
+        person.id = newPerson.id;
         return person;
     }
 
     @Transactional
-    public Person update(Long id, Person person){
+    public PersonDTO update(Long id, PersonDTO person) {
         Person personEntity = findById(id);
+
+        Person updatedPerson = personConverter.dtoToOrm(person);
 
         personEntity.name = person.name;
         personEntity.sex = person.sex;
         personEntity.age = person.age;
         personEntity.address = person.address;
+        personEntity.base64 = updatedPerson.base64;
         persist(personEntity);
-        return personEntity;
+        return personConverter.ormToDto(personEntity);
     }
 
     @Transactional
