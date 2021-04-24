@@ -1,8 +1,9 @@
 package br.com.mp.product.api;
 
-import br.com.mp.product.model.Person;
-import br.com.mp.product.model.PersonDTO;
+import java.util.List;
 
+import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -13,11 +14,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.inject.Inject;
-import javax.validation.Valid;
 
-import java.util.List;
-
+import br.com.mp.product.model.PersonDTO;
 import br.com.mp.product.repository.PersonRepository;
 
 @Path("/person")
@@ -26,7 +24,7 @@ import br.com.mp.product.repository.PersonRepository;
 public class PersonResource {
 
     @Inject
-    private PersonRepository personRepository;
+    PersonRepository personRepository;
 
     @GET
     public List<PersonDTO> list() {
@@ -36,7 +34,7 @@ public class PersonResource {
     @GET
     @Path("{id}")
     public Response getByID(@PathParam("id") Long id) {
-        return Response.ok(personRepository.findById(id)).status(Response.Status.OK).build();
+        return Response.ok(personRepository.findId(id)).status(Response.Status.OK).build();
     }
 
     @POST

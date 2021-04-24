@@ -15,10 +15,14 @@ import java.util.List;
 public class PersonRepository implements PanacheRepository<Person> {
 
     @Inject
-    private PersonConverter personConverter;
+    PersonConverter personConverter;
 
     public List<PersonDTO> list() {
         return personConverter.ormListToDtoList(listAll());
+    }
+
+    public PersonDTO findId(Long id) {
+        return personConverter.ormToDto(findById(id));
     }
 
     @Transactional
@@ -47,7 +51,6 @@ public class PersonRepository implements PanacheRepository<Person> {
     @Transactional
     public void remove(Long id) {
         Person personEntity = findById(id);
-
         delete(personEntity);
     }
 }
