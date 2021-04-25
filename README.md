@@ -9,45 +9,12 @@
   </a>
 </p>
 
-## Link para os Artigos
-- [Linkedin Pulse](https://www.linkedin.com/pulse/tutorial-quarkus-do-zero-at%25C3%25A9-o-deploy-heroku-java-cdi-da-silva-melo )
-
-- [Medium](https://medium.com/@marcus.paulo/tutorial-quarkus-do-zero-at%C3%A9-o-deploy-no-heroku-utilizando-quarkus-java-rest-cdi-panache-8d702caf451f?sk=e6566ef8cf92e4a717054da4de4bd2fb)
-
-<h1 align="center">
-   <img alt="Listar Produtos" title="Listar Produtos" src="./assets/quarkus-logo.png" width="600px" />
-</h1>
-
-## Listar Produtos (API)
-<h1 align="center">
-    <img alt="Listar Produtos" title="Listar Produtos" src="./assets/listar-produtos.png" width="600px" />
-</h1>
-
-## Cadastrar Produto (API)
-<h1 align="center">
-    <img alt="Cadastrar Produto" title="Cadastrar Produto" src="./assets/cadastrar-produto.png" width="600px" />
-</h1>
-
-<!-- TABLE OF CONTENTS -->
-
-## Tabela de Conteúdo
-
-- [Tabela de Conteúdo](#tabela-de-conte%C3%BAdo)
-- [Sobre o Projeto](#sobre-o-projeto)
-  - [Feito Com](#feito-com)
-- [Começando](#come%C3%A7ando)
-  - [Pré-requisitos](#pr%C3%A9-requisitos)
-  - [Estrutura de Arquivos](#estrutura-de-arquivos)
-  - [Instalação](#instala%C3%A7%C3%A3o)
-  - [Edição](#edi%C3%A7%C3%A3o)
-  - [Publicação](#publica%C3%A7%C3%A3o)
-- [Contribuição](#contribui%C3%A7%C3%A3o)
-- [Licença](#licen%C3%A7a)
-- [Contato](#contato)
-
-<!-- ABOUT THE PROJECT -->
 
 ## Sobre o Projeto
+
+### Apenas fiz algumas alterações nesse tutorial feito pelo Marcus Paulo
+
+### Foi Alterada a Tabela de Produto para uma tabela de Pessoa
 
 Tutorial: Quarkus do Zero até o Deploy no Heroku, utilizando Quarkus Java + REST + CDI + Panache, Hibernate com Postgres + Postman
 
@@ -86,89 +53,6 @@ Para reproduzir o exemplo, é necessário seguir os requisitos mínimos.
  - Instalando Docker no windows: (Youtube, ESR)
  - Instalando o Docker no Linux: (Youtube: LinuxTips)
  - Instalando o Docker no Mac: (Youtube: Wellington Rogati)
-
-### Estrutura de Arquivos
-
-A estrutura de arquivos está da seguinte maneira:
-
-```bash
-quarkus-product
-.
-├── Procfile
-├── README-Quarkus.md
-├── README.md
-├── assets
-│   ├── cadastrar-produto.png
-│   └── listar-produtos.png
-├── mvnw
-├── mvnw.cmd
-├── pom.xml
-├── postman
-│   └── Quarkus-Products.postman_collection.json
-├── quarkus-product.iml
-├── src
-│   ├── main
-│   │   ├── docker
-│   │   │   ├── Dockerfile.jvm
-│   │   │   └── Dockerfile.native
-│   │   ├── java
-│   │   │   └── br
-│   │   │       └── com
-│   │   │           └── mp
-│   │   │               └── product
-│   │   │                   ├── api
-│   │   │                   │   └── ProductResource.java
-│   │   │                   ├── model
-│   │   │                   │   └── Product.java
-│   │   │                   └── repository
-│   │   │                       └── ProductRepository.java
-│   │   └── resources
-│   │       ├── META-INF
-│   │       │   └── resources
-│   │       │       └── index.html
-│   │       └── application.properties
-│   └── test
-│       └── java
-│           └── br
-│               └── com
-│                   └── mp
-│                       └── product
-│                           └── api
-│                               ├── NativeProductResourceIT.java
-│                               └── ProductResourceTest.java
-├── system.properties
-└── target
-    ├── classes
-    │   ├── META-INF
-    │   │   └── resources
-    │   │       └── index.html
-    │   ├── application.properties
-    │   └── br
-    │       └── com
-    │           └── mp
-    │               └── product
-    │                   ├── api
-    │                   │   └── ProductResource.class
-    │                   ├── model
-    │                   │   └── Product.class
-    │                   └── repository
-    │                       └── ProductRepository.class
-    ├── generated-sources
-    │   └── annotations
-    ├── maven-status
-    │   └── maven-compiler-plugin
-    │       └── compile
-    │           └── default-compile
-    │               ├── createdFiles.lst
-    │               └── inputFiles.lst
-    ├── quarkus
-    │   └── bootstrap
-    │       └── dev-app-model.dat
-    └── wiring-devmode
-
-43 directories, 28 files
-
-```
 
 ### Criação da aplicação
 
