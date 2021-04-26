@@ -12,11 +12,10 @@
 
 ## Sobre o Projeto
 
-### Apenas fiz algumas alterações nesse tutorial feito pelo Marcus Paulo
+### Um CRUD de Pessoa basico feito em quakus seguindo o tutorial do  Marcus Paulo
 
-### Foi Alterada a Tabela de Produto para uma tabela de Pessoa
+### Também foi criado um metodo para receber imagens e converter de ORM para DTO pra salvar no banco de dados e vice versa;
 
-Tutorial: Quarkus do Zero até o Deploy no Heroku, utilizando Quarkus Java + REST + CDI + Panache, Hibernate com Postgres + Postman
 
 ### Feito Com
 
@@ -86,31 +85,3 @@ Para executar um projeto em Quarkus, basta executar o comando:
 mvn compile quarkus:dev
 ```
 
-<!-- CONTRIBUTING -->
-
-## Contribuição
-
-Fique a vontade para contribuir com o projeto.
-
-1. Faça um Fork do projeto
-2. Crie uma Branch para sua Feature (`git checkout -b feature/newFeature`)
-3. Adicione suas mudanças (`git add .`)
-4. Comite suas mudanças (`git commit -m 'Nova funcionalidade para facilitar ...`)
-5. Faça o Push da Branch (`git push origin feature/newFeature`)
-6. Abra um Pull Request
-
--- English
-- Make a fork;
-- Create a branck with your feature: `git checkout -b my-feature`;
-- Commit changes: `git commit -m 'feat: My new feature'`;
-- Make a push to your branch: `git push origin my-feature`.
-
-After merging your receipt request to done, you can delete a branch from yours.
-
-## :memo: License
-
-This project is under the MIT license. See the [LICENSE](LICENSE.md) for details.
-
----
-
-Made with ♥ by Marcus Paulo :wave: [Get in touch!](https://www.linkedin.com/in/marcuspaulo/)
