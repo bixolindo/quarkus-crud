@@ -3,14 +3,12 @@
 
 ## Sobre o Projeto
 
-### Um CRUD de Pessoa basico feito em quakus seguindo o tutorial do  Marcus Paulo
+### Um CRUD de Pessoa básico feito em quakus seguindo o tutorial do Marcus Paulo
 
-### Também foi criado um metodo para receber imagens e converter de ORM para DTO pra salvar no banco de dados e vice versa;
+### Também foi criado um método para receber imagens e converter de ORM para DTO para salvar no banco de dados e vice-versa;
 
 
-### Feito Com
-
-Tecnologias utilizadas no projeto
+# Tecnologias utilizadas no projeto
 
 - [JAVA](https://www.java.com/pt_BR/download/) - Java é uma linguagem de programação e plataforma computacional lançada pela primeira vez pela Sun Microsystems em 1995. Existem muitas aplicações e sites que não funcionarão, a menos que você tenha o Java instalado, e mais desses são criados todos os dias;
 - [Quarkus](https://quarkus.io/) - A Red Hat lançou o Quarkus, um framework Java nativo do Kubernetes feito sob medida para o GraalVM e OpenJDK HotSpot. O Quarkus visa tornar o java uma plataforma líder em ambientes serverless e Kubernetes, oferecendo aos desenvolvedores um modelo unificado de programação reativa e imperativa;
