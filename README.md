@@ -1,14 +1,5 @@
 
-# Tutorial: Quarkus do Zero até o Deploy no Heroku, utilizando Quarkus Java + REST + CDI + Panache, Hibernate com Postgres + Postman
 ## Projeto: API REST
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://quarkus.io">
-  </a>
-</p>
-
 
 ## Sobre o Projeto
 
