@@ -15,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.mp.product.model.Person;
 import br.com.mp.product.model.PersonDTO;
 import br.com.mp.product.repository.PersonRepository;
 
@@ -40,6 +41,12 @@ public class PersonResource {
     @POST
     public Response create(@Valid PersonDTO person) {
         PersonDTO personEntity = personRepository.save(person);
+        return Response.ok(personEntity).status(Response.Status.CREATED).build();
+    }
+    @POST
+    @Path("/autenticar")
+    public Response autenticar(@Valid Person person) {
+        Person personEntity = personRepository.autenticar(person);
         return Response.ok(personEntity).status(Response.Status.CREATED).build();
     }
 

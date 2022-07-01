@@ -13,13 +13,19 @@ public class Person extends PanacheEntity {
     @NotBlank(message = "Name may not be blank")
     public String name;
 
-    public int sex;
+    public String namepais;
 
-    public int age;
+    public String rg;
+    
+    public int type;
+    
+    public String password;
 
-    @NotBlank(message = "adress may not be blank")
     public String address;
 
     public byte[] base64;
-
+    
+    public static Person findByName(String name, String password){
+        return find("name = ?1 AND password = ?2", name, password).firstResult();
+    }
 }

@@ -2,29 +2,37 @@ package br.com.mp.product.model;
 
 public class PersonDTO {
 
-    public Long id;
+	public String namepais;
 
-    public String name;
+	public String rg;
 
-    public int sex;
+	public int type;
 
-    public int age;
+	public String password;
 
-    public String address;
+	public Long id;
 
-    public String base64;
+	public String name;
 
-    public PersonDTO() {
-        super();
-    }
+	public String address;
 
-    public PersonDTO(Long id, String name, int sex, int age, String address, String base64) {
-        this.id = id;
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-        this.address = address;
-        this.base64 = base64;
-    }
+	public String base64;
+
+	public PersonDTO() {
+		super();
+	}
+
+	public PersonDTO(String namepais, String rg, int type, String password, Long id, String name, String address,
+			String base64) {
+		super();
+		this.namepais = namepais;
+		this.rg = rg;
+		this.type = type;
+		this.password = password;
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.base64 = base64;
+	}
 
 }

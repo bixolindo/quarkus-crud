@@ -32,6 +32,11 @@ public class PersonRepository implements PanacheRepository<Person> {
         person.id = newPerson.id;
         return person;
     }
+    
+    public Person autenticar(Person person) {
+    	Person pessoaBanco = Person.findByName(person.name, person.password);
+    	return pessoaBanco;
+    }
 
     @Transactional
     public PersonDTO update(Long id, PersonDTO person) {
@@ -40,8 +45,10 @@ public class PersonRepository implements PanacheRepository<Person> {
         Person updatedPerson = personConverter.dtoToOrm(person);
 
         personEntity.name = person.name;
-        personEntity.sex = person.sex;
-        personEntity.age = person.age;
+        personEntity.rg = person.rg;
+        personEntity.type = person.type;
+        personEntity.namepais = person.namepais;
+        personEntity.password = person.password;
         personEntity.address = person.address;
         personEntity.base64 = updatedPerson.base64;
         persist(personEntity);
