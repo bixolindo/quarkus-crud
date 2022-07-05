@@ -37,10 +37,17 @@ public class CrecheResource {
 		return Response.ok(crecheRepository.findId(id)).status(Response.Status.OK).build();
 	}
 
-	@PUT
 	@POST
 	public Response create(@Valid Creche creche) {
 		Creche crecheEntity = crecheRepository.save(creche);
+		return Response.ok(crecheEntity).status(Response.Status.CREATED).build();
+	}
+	
+	@PUT
+	@Path("{id}")
+	public Response update(@PathParam("id") Long id, Creche creche) {
+		System.err.println("aqui");
+		Creche crecheEntity = crecheRepository.update(id, creche);
 		return Response.ok(crecheEntity).status(Response.Status.CREATED).build();
 	}
 

@@ -23,6 +23,16 @@ public class CrecheRepository implements PanacheRepository<Creche> {
 		persist(creche);
 		return creche;
 	}
+	
+	@Transactional
+	public Creche update(Long id, Creche creche) {
+		Creche crecheBanco = findById(id);
+		crecheBanco.setBairro(creche.getBairro());
+		crecheBanco.setLimite(creche.getLimite());
+		crecheBanco.setName(creche.getName());
+		persist(crecheBanco);
+		return crecheBanco;
+	}
 
 	@Transactional
 	public void remove(Long id) {
