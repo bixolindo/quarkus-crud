@@ -46,7 +46,6 @@ public class CrecheResource {
 	@PUT
 	@Path("{id}")
 	public Response update(@PathParam("id") Long id, Creche creche) {
-		System.err.println("aqui");
 		Creche crecheEntity = crecheRepository.update(id, creche);
 		return Response.ok(crecheEntity).status(Response.Status.CREATED).build();
 	}

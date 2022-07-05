@@ -39,7 +39,6 @@ public class CriancaRepository implements PanacheRepository<Crianca> {
 
 		Crianca updatedPerson = criancaConverter.dtoToOrm(crianca);
 
-		System.err.println(crianca.valido);
 		criancaEntity.name = crianca.name;
 		criancaEntity.rg = crianca.rg;
 		criancaEntity.id_creche = crianca.id_creche;
